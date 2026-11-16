@@ -1,5 +1,7 @@
 # opa-checkmarx-kics
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Vulnetix/opa-checkmarx-kics)
+
 Vulnetix-compatible OPA/Rego IaC security rules, adapted from the intent of [Checkmarx KICS](https://github.com/Checkmarx/kics) ("Keeping Infrastructure as Code Secure").
 
 ## Clean-room approach
