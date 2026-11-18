@@ -1,19 +1,19 @@
 # opa-checkmarx-kics
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Vulnetix/opa-checkmarx-kics)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Vulnesis/opa-checkmarx-kics)
 
-Vulnetix-compatible OPA/Rego IaC security rules, adapted from the intent of [Checkmarx KICS](https://github.com/Checkmarx/kics) ("Keeping Infrastructure as Code Secure").
+Vulnesis-compatible OPA/Rego IaC security rules, adapted from the intent of [Checkmarx KICS](https://github.com/Checkmarx/kics) ("Keeping Infrastructure as Code Secure").
 
 ## Clean-room approach
 
 These rules were produced using a **clean-room** methodology:
 
 1. The **intent** of each upstream KICS rule was studied — what misconfiguration it detects, why it matters, and what remediation it recommends.
-2. Detection logic was then **written from scratch** against the Vulnetix `input.file_contents` schema.
-3. **No upstream KICS Rego code was copied.** The original KICS rules operate on a fundamentally different input schema (parsed document-model structures produced by KICS' Go loader), so they cannot be used verbatim with Vulnetix.
+2. Detection logic was then **written from scratch** against the Vulnesis `input.file_contents` schema.
+3. **No upstream KICS Rego code was copied.** The original KICS rules operate on a fundamentally different input schema (parsed document-model structures produced by KICS' Go loader), so they cannot be used verbatim with Vulnesis.
 4. The helper libraries (`rules/_lib/dockerfile.rego`, `rules/_lib/terraform.rego`, `rules/_lib/ansible.rego`) are original implementations that parse raw file text using regex — they are not derived from KICS' Go-side parsers.
 
-The result is a set of rules that match the **security intent** of the upstream KICS checks while being natively compatible with the Vulnetix CLI's `--rule` mechanism.
+The result is a set of rules that match the **security intent** of the upstream KICS checks while being natively compatible with the Vulnesis CLI's `--rule` mechanism.
 
 ## Coverage
 
@@ -48,20 +48,20 @@ opa-checkmarx-kics/
 
 ```bash
 # Use alongside built-in rules
-vulnetix scan --rule Vulnetix/opa-checkmarx-kics
+vulnesis scan --rule Vulnesis/opa-checkmarx-kics
 
 # Use only these rules (disable built-ins)
-vulnetix scan --rule Vulnetix/opa-checkmarx-kics --disable-default-rules
+vulnesis scan --rule Vulnesis/opa-checkmarx-kics --disable-default-rules
 
 # Combine with other custom rule repos
-vulnetix scan \
-  --rule Vulnetix/opa-checkmarx-kics \
-  --rule Vulnetix/opa-aquasecurity-trivy
+vulnesis scan \
+  --rule Vulnesis/opa-checkmarx-kics \
+  --rule Vulnesis/opa-aquasecurity-trivy
 ```
 
 ## Input schema
 
-Rules operate on Vulnetix's `input.file_contents` map (file path → raw file text):
+Rules operate on Vulnesis's `input.file_contents` map (file path → raw file text):
 
 ```json
 {

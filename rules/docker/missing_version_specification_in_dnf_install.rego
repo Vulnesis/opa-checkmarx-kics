@@ -1,5 +1,5 @@
 # Adapted from https://github.com/Checkmarx/kics
-# Ported to the Vulnetix Rego input schema (input.file_contents).
+# Ported to the Vulnesis Rego input schema (input.file_contents).
 
 package vulnetix.rules.kics_docker_missing_version_specification_in_dnf_install
 

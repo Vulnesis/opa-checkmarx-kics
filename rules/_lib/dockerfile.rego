@@ -1,4 +1,4 @@
-# Dockerfile helper library for KICS rules ported to Vulnetix schema.
+# Dockerfile helper library for KICS rules ported to Vulnesis schema.
 # Imported from checkmarx-kics assets/libraries/dockerfile.rego
 
 package vulnetix.kics.dockerfile

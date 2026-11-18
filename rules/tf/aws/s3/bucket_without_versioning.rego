@@ -1,5 +1,5 @@
 # Adapted from https://github.com/Checkmarx/kics (S3 Bucket Without Versioning).
-# Ported to the Vulnetix Rego input schema (input.file_contents).
+# Ported to the Vulnesis Rego input schema (input.file_contents).
 # Checks if S3 buckets have versioning enabled.
 
 package vulnetix.rules.kics_tf_aws_s3_01
