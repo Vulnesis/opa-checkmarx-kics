@@ -1,6 +1,6 @@
 # opa-checkmarx-kics
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Vulnetix/opa-checkmarx-kics)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Vulnesis/opa-checkmarx-kics)
 
 Vulnetix-compatible OPA/Rego IaC security rules, adapted from the intent of [Checkmarx KICS](https://github.com/Checkmarx/kics) ("Keeping Infrastructure as Code Secure").
 
@@ -48,13 +48,13 @@ opa-checkmarx-kics/
 
 ```bash
 # Use alongside built-in rules
-vulnesis scan --rule Vulnesis/opa-checkmarx-kics
+vulnetix scan --rule Vulnesis/opa-checkmarx-kics
 
 # Use only these rules (disable built-ins)
-vulnesis scan --rule Vulnesis/opa-checkmarx-kics --disable-default-rules
+vulnetix scan --rule Vulnesis/opa-checkmarx-kics --disable-default-rules
 
 # Combine with other custom rule repos
-vulnesis scan \
+vulnetix scan \
   --rule Vulnesis/opa-checkmarx-kics \
   --rule Vulnesis/opa-aquasecurity-trivy
 ```
